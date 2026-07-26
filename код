@@ -1,0 +1,11 @@
+n = int(input())
+
+power = 1
+
+while n > 7:
+    power *= 7
+    n -= 7
+
+power *= n
+
+print(power)
