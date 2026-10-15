@@ -1,11 +1,38 @@
-n = int(input())
+#include <iostream>
+using namespace std;
 
-power = 1
+int main() {
+    int N;
+    cin >> N;
 
-while n > 7:
-    power *= 7
-    n -= 7
+    if (N == 1) {
+        cout << 1 << endl;
+        return 0;
+    }
 
-power *= n
+    long long power = 1;
 
-print(power)
+    if (N % 3 == 0) {
+        for (int i = 0; i < N / 3; i++) {
+            power *= 3;
+        }
+    }
+    else if (N % 3 == 1) {
+        power = 4;
+
+        for (int i = 0; i < (N - 4) / 3; i++) {
+            power *= 3;
+        }
+    }
+    else {
+        power = 2;
+
+        for (int i = 0; i < (N - 2) / 3; i++) {
+            power *= 3;
+        }
+    }
+
+    cout << power << endl;
+
+    return 0;
+}
